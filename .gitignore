@@ -1,52 +1,26 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+bool isValid(char* s) 
+{
+    int n = strlen(s);
+    int m = 0;
+    char stack[n];
+    for (int i = 0; i < n; i++) 
+    {
+        if (s[i] == '{' || s[i] == '(' || s[i] == '[') 
+        } else 
+        {
+            if (m == 0)
+                return false;
+        {
+            stack[m++] = s[i];
+            
+            char top = stack[m - 1];
+            
+            if ((s[i] == '}' && top == '{') || (s[i] == ']' && top == '[') || (s[i] == ')' && top == '('))
+                m--;
+            else
+                return false;
+        }
+    }
+    return (m == 0);
+}
+//https://leetcode.com/problems/valid-parenthes
